@@ -77,8 +77,9 @@ FlurryAdSize defaultAdSize ;
     
 }
 
--(void) viewWillAppear:(BOOL)animated
+-(void) viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     [self updateToOrientationOnRotation];
     
     // Register this UIViewController as a delegate for ad callbacks
@@ -135,7 +136,8 @@ FlurryAdSize defaultAdSize ;
 }
 
 
--(void) viewWillDisappear:(BOOL)animated {
+-(void) viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
     //reset the AdDelegate upon leaving the UIViewController
     [FlurryAds setAdDelegate:nil];
 }

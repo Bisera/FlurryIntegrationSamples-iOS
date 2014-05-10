@@ -96,8 +96,8 @@ int width, height ;
 
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self updateToOrientationOnRotation];
 }
 
@@ -210,9 +210,9 @@ int width, height ;
     
 }
 
--(void) viewWillDisappear:(BOOL)animated {
+-(void) viewDidDisappear:(BOOL)animated {
     
-    [super viewWillDisappear:animated];
+    [super viewDidDisappear:animated];
     
     NSUInteger adTypeIx  = [self.adTypePicker selectedRowInComponent:0];
     NSString *adSpaceName = [self.flurryAdSpaces objectAtIndex:adTypeIx];
